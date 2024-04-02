@@ -2,15 +2,16 @@ import re
 
 chuoi = "-100#^sdfkj8902w3ir021@swf-20"
 
-positive_sum = 0
-negative_sum = 0
+sum_am = 0
+sum_duong = 0
 
 for so in re.findall(r"[-+]?\d+", chuoi):
     number = int(so)
     if number > 0:
-        positive_sum += number
+        sum_duong += number
     elif number < 0:
-        negative_sum += number
+        sum_am += number
 
-print("Sum of positive integers:", positive_sum)
-print("Sum of negative integers:", negative_sum)
+print("Tổng các số nguyên dương:", sum_duong)
+print("Tổng các số nguyên âm:", sum_am)
+print("Tổng các số nguyên: ", sum_am+sum_duong)
